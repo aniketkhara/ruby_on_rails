@@ -5,8 +5,8 @@
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "About", about_path %></li>
-            <li><%= link_to "Login", login_path %></li>
-             <% if log_in current_user %>
+             <%# if log_in current_user %>
+            <% if logged_in? %>
              <li><%= link_to "Users", '#' %></li>
               <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -22,7 +22,7 @@
             </ul>
           </li>
         <% else %>
-          <li><%= link_to "Log in", login_path %></li>
+          <li><%= link_to "Login", login_path %></li>
         <% end %>
       </ul>
     </nav>
